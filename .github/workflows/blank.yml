@@ -1,0 +1,12 @@
+name: docker build demo
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: git clone https://github.com/SpaceNetChallenge/SpaceNet7_Multi-Temporal_Solutions.git
+      - run: cd ./SpaceNet7_Multi-Temporal_Solutions/1-lxastro0/code
+      - run: docker build -t lxastro0 .
+      - run: echo "build completed!!!!"
+
